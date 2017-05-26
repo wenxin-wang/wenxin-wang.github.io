@@ -2,26 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="/assets/main.css">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <link rel="stylesheet" type="text/css" href="/main.css">
         <title>Cozy Fire</title>
     </head>
     <body>
         <h1>Dream a little dream with me</h1>
         <p>Parameter hi is: <span id="hi"></span></p>
-        <script>
-         function getParameterByName(name, url) {
-             if (!url) {
-                 url = window.location.href;
-             }
-             name = name.replace(/[\[\]]/g, "\\$&");
-             var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                 results = regex.exec(url);
-             if (!results) return null;
-             if (!results[2]) return '';
-             return decodeURIComponent(results[2].replace(/\+/g, " "));
-         }
-         document.getElementById("hi").appendChild(
-             document.createTextNode(getParameterByName("hi")));
-        </script>
+        <div id="tags" style="width: 100px;">
+            <a id="tag-A" href="#">A</a>
+            <a id="tag-B" href="#">B</a>
+        </div>
+        <ul id="topics">
+            <li><span class="tag-A">Topic1</span></li>
+            <li><span class="tag-B">Topic2</span></li>
+        </ul>
+        <script src="/main.js"></script>
+        <script src="/tag.js"></script>
     </body>
 </html>
