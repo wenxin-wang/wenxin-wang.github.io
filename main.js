@@ -12,3 +12,14 @@ function getParameterByName(name, url) {
 
 document.getElementById("hi").appendChild(
   document.createTextNode(getParameterByName("hi")));
+
+fetch('https://api.github.com/repos/wenxin-wang/wiki/commits/master')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson);
+  })
+  .finally(function() {
+    console.log('hi');
+  });
