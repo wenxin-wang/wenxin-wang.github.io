@@ -16,7 +16,7 @@
       window.addEventListener("DOMContentLoaded", function() {
 	  var connectBtn = document.getElementById("connectBtn");
 	  connectBtn.disabled = true;
-	  var peer = new Peer({'debug': 3});
+	  var peer = new Peer({'debug': 3, 'config': { 'iceServers': [{ 'url': 'stun:154.8.238.46:41114' }] }});
 	  peer.on('open', function(id) {
 	      console.log('Callee: Tell your friend, that your peer ID is: ' + id + ', and just wait');
 	      console.log('Caller: Paste your friend\'s Id above and press connect');
